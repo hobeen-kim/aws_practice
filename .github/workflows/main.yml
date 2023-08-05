@@ -26,5 +26,5 @@ jobs:
           cd backend
           docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
           docker build -t backend . 
-          docker tag backend ${{ secrets.DOCKER_HUB_USERNAME }}/backend:${GITHUB_SHA::7}
-          docker push ${{ secrets.DOCKER_HUB_PASSWORD }}/backend:${GITHUB_SHA::7}
+          docker tag backend sksjsksh32/backend:${GITHUB_SHA::7}
+          docker push sksjsksh32/backend:${GITHUB_SHA::7}
