@@ -23,6 +23,7 @@ public class TestController {
 
         Test save = testRepository.save(test);
         return save.getName();
+
     }
 
 }
