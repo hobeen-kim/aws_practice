@@ -6,10 +6,10 @@ files:
     destination: /home/ubuntu/build
 
 hooks:
-  BeforeInstall:
-    - location: server_clear.sh
-      timeout: 3000
-      runas: root
+#  BeforeInstall:
+#    - location: server_clear.sh
+#      timeout: 3000
+#      runas: root
   AfterInstall:
     - location: initialize.sh
       timeout: 3000
