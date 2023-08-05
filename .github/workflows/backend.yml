@@ -60,6 +60,7 @@ jobs:
               'fi',
               'sudo docker pull sksjsksh32/backend:${GITHUB_SHA::7}',
               'sudo docker tag sksjsksh32/backend:${GITHUB_SHA::7} backend',
+              'sudo docker image rm sksjsksh32/backend:${GITHUB_SHA::7}',
               'sudo docker run -d --name server -e spring.datasource.username=${{ secrets.DATASOURCE_USERNAME }} -e spring.datasource.password=${{ secrets.DATASOURCE_PASSWORD }} -e spring.datasource.url=${{ secrets.DATASOURCE_URL }} -p 80:8080 backend'
             ]" \
             --output text
