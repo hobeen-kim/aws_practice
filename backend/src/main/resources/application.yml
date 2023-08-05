@@ -1,8 +1,6 @@
 spring:
   datasource:
     url: jdbc:mysql://sixman-rds.c2bhjqsi4ogs.ap-northeast-2.rds.amazonaws.com/sixmandb?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
-    username: admin
-    password: sixmanrds45!!
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
