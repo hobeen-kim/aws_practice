@@ -2,7 +2,15 @@ name: Backend CI/CD
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - dev
+      - back-dev
+  pull_request:
+    branches:
+      - main
+      - dev
+      - back-dev
 
 jobs:
   build:
