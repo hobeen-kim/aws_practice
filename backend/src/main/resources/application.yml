@@ -23,8 +23,9 @@ spring:
 
 ---
 spring:
-  profiles:
-    active: production
+  config:
+    activate:
+      on-profile: production
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://sixman-rds.c2bhjqsi4ogs.ap-northeast-2.rds.amazonaws.com/sixmandb?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
@@ -38,9 +39,9 @@ url:
 
 ---
 spring:
-  profiles:
-    active: local
   config:
+    activate:
+      on-profile: local
     import:
       - optional:classpath:/application-secret.yml
   h2:
