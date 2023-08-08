@@ -7,7 +7,7 @@ function App() {
   const [csrfToken, setCsrfToken] = useState(null); // CSRF 토큰을 위한 state
   const [username, setUsername] = useState(''); // For form login
   const [password, setPassword] = useState(''); // For form login
-  const URI = "http://ec2-3-34-138-44.ap-northeast-2.compute.amazonaws.com";
+  const URI = "http://localhost:8080";
 
   const fetchData = () => {
     fetch(URI + "/userInfo", {

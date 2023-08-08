@@ -61,4 +61,4 @@ spring:
             kakao:
                 redirect-uri: http://localhost:8080/login/oauth2/code/kakao
 url:
-  frontend: http://localhost:3000
+  frontend: http://sixman-front-s3.s3-website.ap-northeast-2.amazonaws.com
