@@ -38,6 +38,7 @@ public class CustomAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
             for(Cookie cookie : cookies){
                 if(cookie.getName().equals("JSESSIONID")){
                     System.out.println("cookie name : " + cookie.getName());
+                    System.out.println("cookie value : " + cookie.getValue());
                 }
             }
         }
