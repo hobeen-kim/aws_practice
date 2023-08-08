@@ -36,7 +36,7 @@ spring:
     active: local
   config:
     import:
-      - classpath:/application-secret.yml
+      - optional:classpath:/application-secret.yml
   h2:
     console:
       enabled: true
