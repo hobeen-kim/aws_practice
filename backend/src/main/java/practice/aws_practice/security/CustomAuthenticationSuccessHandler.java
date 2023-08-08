@@ -7,6 +7,7 @@ import org.springframework.security.web.authentication.session.SessionAuthentica
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -30,6 +31,16 @@ public class CustomAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
         String url = makeRedirectUrl();
 
         System.out.println("success handler url : " + url);
+
+        //쿠키 확인
+        Cookie[] cookies = request.getCookies();
+        if(cookies != null){
+            for(Cookie cookie : cookies){
+                if(cookie.getName().equals("JSESSIONID")){
+                    System.out.println("cookie name : " + cookie.getName());
+                }
+            }
+        }
 
         getRedirectStrategy().sendRedirect(request, response, url);
     }
