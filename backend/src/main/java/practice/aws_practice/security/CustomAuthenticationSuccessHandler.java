@@ -29,6 +29,8 @@ public class CustomAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
 
         String url = makeRedirectUrl();
 
+        System.out.println("success handler url : " + url);
+
         getRedirectStrategy().sendRedirect(request, response, url);
     }
 

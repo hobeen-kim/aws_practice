@@ -1,12 +1,4 @@
 spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://sixman-rds.c2bhjqsi4ogs.ap-northeast-2.rds.amazonaws.com/sixmandb?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
-  jpa:
-    hibernate:
-      ddl-auto: create
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
   security:
     oauth2:
       client:
@@ -16,7 +8,7 @@ spring:
           github:
             scope: user:email, read:user
           kakao:
-            redirect-uri: http://http://ec2-3-34-138-44.ap-northeast-2.compute.amazonaws.com/login/oauth2/code/kakao
+            redirect-uri: http://ec2-3-34-138-44.ap-northeast-2.compute.amazonaws.com/login/oauth2/code/kakao
             client-authentication-method: POST
             authorization-grant-type: authorization_code
             scope: profile_nickname, account_email
@@ -27,6 +19,20 @@ spring:
             token-uri: https://kauth.kakao.com/oauth/token
             user-info-uri: https://kapi.kakao.com/v2/user/me
             user-name-attribute: id
+
+
+---
+spring:
+  profiles:
+    active: production
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://sixman-rds.c2bhjqsi4ogs.ap-northeast-2.rds.amazonaws.com/sixmandb?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
 url:
   frontend: http://sixman-front-s3.s3-website.ap-northeast-2.amazonaws.com
 
@@ -53,6 +59,5 @@ spring:
         registration:
             kakao:
                 redirect-uri: http://localhost:8080/login/oauth2/code/kakao
-
 url:
   frontend: http://localhost:3000
