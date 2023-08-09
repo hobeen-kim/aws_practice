@@ -19,7 +19,11 @@ spring:
             token-uri: https://kauth.kakao.com/oauth/token
             user-info-uri: https://kapi.kakao.com/v2/user/me
             user-name-attribute: id
-
+#server:
+#  servlet:
+#    session:
+#      cookie:
+#        sameSite: lax
 
 ---
 spring:
@@ -37,13 +41,16 @@ spring:
 url:
   frontend: http://sixman-front-s3.s3-website.ap-northeast-2.amazonaws.com
 
+cookie:
+  domain: "sixman-front-s3.s3-website.ap-northeast-2.amazonaws.com"
+
 ---
 spring:
   config:
     activate:
       on-profile: local
     import:
-      - optional:classpath:/application-secret.yml
+      - classpath:/application-secret.yml
   h2:
     console:
       enabled: true
@@ -61,4 +68,7 @@ spring:
             kakao:
                 redirect-uri: http://localhost:8080/login/oauth2/code/kakao
 url:
-  frontend: http://sixman-front-s3.s3-website.ap-northeast-2.amazonaws.com
+  frontend: http://localhost:3000
+
+cookie:
+  domain: "localhost"

@@ -1,6 +1,0 @@
-aws:
-  paramstore:
-    enabled: true
-    prefix: /sixman
-    name: rds
-    profileSeparator: _
